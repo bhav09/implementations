@@ -2,7 +2,7 @@
 from torchvision import models
 dir(models)
 alexnet=models.AlexNet()
-resnet=models.resnet101(pretrained=True)
+resnet=models.resnet101(pretrained=True) #downloads all the weights of this model
 
 from torchvision import transforms
 preprocess = transforms.Compose([
