@@ -34,8 +34,8 @@ def maximize_window():
     pyautogui.click()
 
 #to minimize the window
-def minimzie_window():
-    pyautogui.moveTo(1510, 25, duration=0.7)
+def minimize_window():
+    pyautogui.moveTo(1510, 20, duration=0.7)
     pyautogui.click()
     pyautogui.click()
 
@@ -57,6 +57,24 @@ def Move_to_direction():
             print('Request Error')
     direction = direction + str(r2.recognize_google(audio))
 
+#----------------------------------------------------------------------------------------------------------------------#
+
+# making a diamond using mouse automation
+print('Making a diamond shape!')
+pyautogui.moveTo(1920/2,1080/2,duration=0.5)
+pyautogui.moveRel(200,0,duration=0.5)
+for i in range(20):
+    if i < 5:
+        pyautogui.moveRel(35,-35,duration=0.3)
+    elif i < 10 and i > 5:
+        pyautogui.moveRel(-35, -35, duration=0.3)
+    elif i < 15 and i > 10:
+        pyautogui.moveRel(-35, 35, duration=0.3)
+    elif i<20 and i >15:
+        pyautogui.moveRel(35, 35, duration=0.3)
+
+time.sleep(3)
+print('---------------------------------------')
 direction = ''
 pixels = 300 #drift of 300 pixels
 time.sleep(2) #delay of 2 seconds
@@ -96,17 +114,17 @@ for i in range(3):
     r1 = sr.Recognizer()
     mic1 = sr.Microphone()
     print('Now listening ..')
-    time.sleep(1)
+    time.sleep(2)
     with mic1 as source:
         audio = r1.listen(source)
         command = r1.recognize_google(audio)
         if command == 'close the window':
             print('Close ',command)
             close_window()
-        if command == 'maximize the window':
+        elif command == 'maximize the window':
             print('Maximize ',command)
             maximize_window()
-        if command == 'minimize the window':
-            print('Minimize ',command)
-            minimzie_window()
-    
+        elif command == 'minimise the window':
+            print('Minimise ',command)
+            minimize_window()
+    time.sleep(1)
