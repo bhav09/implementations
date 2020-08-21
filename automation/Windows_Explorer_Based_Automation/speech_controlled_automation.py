@@ -109,17 +109,4 @@ for i in range(3):
         if command == 'minimize the window':
             print('Minimize ',command)
             minimzie_window()
-    '''
-    except sr.UnknownValueError:
-        print('Value unknown')
-    except sr.RequestError:
-        print('Request Error')
-    '''
-
-
-#print(pyautogui.getAllTitles())
-#print(pyautogui.getWindowsWithTitle('LinkedIn'))
-#x = pyautogui.getWindowsWithTitle('Bhavishya Pandit | LinkedIn - Google Chrome')
-#pyautogui.getActiveWindow = pyautogui.getWindowsWithTitle('LinkedIn')[0]
-
-#print(pyautogui.getWindowsWithTitle('Bhavishya Pandit | LinkedIn - Google Chrome'))
+    
