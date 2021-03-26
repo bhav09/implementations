@@ -13,7 +13,7 @@ def openbrowser():
 
 def tracker():
     driver = openbrowser()
-    time_spent = 10
+    time_spent = 600
     while True:
         url = driver.current_url
         url = url[8:]
@@ -25,11 +25,11 @@ def tracker():
             time.sleep(10)
             notification.notify(
                 title=f'CUSTOM NOTIFICATION',
-                message=f'You have spent {time_spent} mintures on {url[1].capitalize()}!',
+                message=f'You have spent {time_spent/60} mintures on {url[1].capitalize()}!',
                 app_icon='clock.ico',
                 timeout=5
             )
-            time_spent += 10
+            time_spent += 600
 
 if __name__ == '__main__':
     #calling the function
