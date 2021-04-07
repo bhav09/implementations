@@ -45,8 +45,11 @@ def video():
             cv2.imshow('Video Frame', img)
             #delay of 1 mili second
             cv2.waitKey(1)
-    except:
-        pass
+    except Exception as e:
+        print(e)
 
 if __name__ == '__main__':
+    #for video
     video()
+    #for image
+    #image()
