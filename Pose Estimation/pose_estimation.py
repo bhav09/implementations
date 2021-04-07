@@ -1,0 +1,52 @@
+#dependencies
+
+#pip install opencv-python
+import cv2
+#pip install mediapipe
+import mediapipe as mp
+import time
+
+#ancillaries
+mpPose = mp.solutions.pose
+pose = mpPose.Pose()
+mpDraw = mp.solutions.drawing_utils
+
+def image():
+    img = cv2.imread('Images/obama.jpg')
+    img = cv2.resize(img,(800,600))
+    rgb = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+    output = pose.process(rgb)
+    if output.pose_landmarks:
+            mpDraw.draw_landmarks(img, output.pose_landmarks,mpPose.POSE_CONNECTIONS)
+    cv2.imshow('Video Frame', img)
+    cv2.waitKey(0)
+
+def video():
+    prev_time = 0
+    cam = cv2.VideoCapture('Videos/Elon Musk dancing.mp4')
+    try:
+        while True:
+            #reading image as frames
+            _,img = cam.read()
+            #converting BGR to RGB
+            rgb = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+            #processing to detect potential body land marks
+            output = pose.process(rgb)
+            #if landmarks are present, then show them
+            if output.pose_landmarks:
+                mpDraw.draw_landmarks(img, output.pose_landmarks,mpPose.POSE_CONNECTIONS)
+            #generating FPS count
+            curr_time = time.time()
+            fps = 1/(curr_time-prev_time)
+            prev_time = curr_time
+            #pasting text
+            cv2.putText(img,f'FPS: {str(int(fps))}',(450,60),cv2.FONT_HERSHEY_SIMPLEX,1,(255,0,0),2)
+            #displaying final output
+            cv2.imshow('Video Frame', img)
+            #delay of 1 mili second
+            cv2.waitKey(1)
+    except:
+        pass
+
+if __name__ == '__main__':
+    video()
