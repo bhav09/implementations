@@ -14,11 +14,12 @@ Welcome to Brick Buster, the coolest brick breaker game where you can unleash yo
 - Python 3.x
 - Pygame
 - Mediapipe
+- Keyboard
 
 Install the required packages with a snap of your fingers:
 
 ```bash
-pip install pygame mediapipe
+pip install pygame mediapipe keyboard
 ```
 
 ## Let the Fun Begin! 🚀
