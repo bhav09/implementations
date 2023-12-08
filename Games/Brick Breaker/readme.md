@@ -4,7 +4,7 @@ Welcome to Brick Buster, the coolest brick breaker game where you can unleash yo
 
 ## How to Play 🤘
 
-1. **Run the Game:** Fire up your Python environment and launch the game script.
+1. **Run the Game:** Fire up your Python environment and launch the game and hand scrips.
 2. **Gesture Controls:** Break those bricks with your amazing hand gestures using the power of Mediapipe!
    - Swipe right to move the paddle right.
    - Swipe left to move the paddle left.
