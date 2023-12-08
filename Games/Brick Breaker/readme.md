@@ -33,4 +33,4 @@ A big shoutout to all the contributors who made this game a reality! Feel free t
 
 Found a bug? Want to suggest an awesome feature? Reach out to us on [GitHub Issues](https://github.com/yourrepo/brick-buster-mania/issues). Your feedback fuels our game development ninja skills!
 
-Now, grab your virtual nunchucks and get ready for an epic Brick Buster Mania showdown! 🥷🎮
+Now, grab your virtual nunchucks and get ready for an epic Brick Buster showdown! 🥷🎮
